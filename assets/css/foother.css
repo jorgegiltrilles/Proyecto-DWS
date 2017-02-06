@@ -194,24 +194,27 @@ header .header-limiter nav a.selected {
 --------------------*/
 
 footer{
-	background-color: #292c2f;
+	background-color: #222222;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	width: 100%;
-	text-align: left;
+	text-align: right;
 	font: normal 16px sans-serif;
 
-	padding: 45px 50px;
+	padding: 5px 50px;
 }
 
 footer .footer-limiter {
 	max-width: 880px;
-	margin: 0 auto;
+	margin: 15 auto;
+	padding: 0;
 }
 
 footer .footer-left p{
 	color:  #8f9296;
 	font-size: 14px;
-	margin: 0;
+	margin: 0 auto;
+	padding: 0;
+	
 }
 
 /* Footer links */
@@ -229,6 +232,7 @@ footer p.footer-links a{
 	line-height: 1.8;
 	text-decoration: none;
 	color:  inherit;
+	
 }
 
 footer .footer-right{

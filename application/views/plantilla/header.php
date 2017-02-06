@@ -14,7 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Foother CSS -->
-<link href="<?=base_url()?>assets/css/foother.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/foother.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="<?=base_url()?>assets/css/sb-admin.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Gestión Empresarial JGT</a>
+                <a class="navbar-brand" href="<?= base_url()?>index.php/welcome">Gestión Empresarial JGT</a>
                 <a class="navbar-brand" href="#"> <?= $email ?> </a>
             </div>
             <!-- Top Menu Items -->

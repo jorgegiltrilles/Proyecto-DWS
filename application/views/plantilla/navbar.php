@@ -31,12 +31,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                        <a href="<?=base_url()?>pdf/prueba.pdf"><i class="fa fa-fw fa-file"></i> Manual de usuario</a>
                     </li>
                     <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Acerca de</a>
                     </li>
-                </ul>
+                    
+
+             </ul>
+
             </div>
               <!-- /.navbar-collapse -->
         </nav>
