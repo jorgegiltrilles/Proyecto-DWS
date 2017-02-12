@@ -10,7 +10,7 @@ class Escritorio extends CI_Controller {
      $data['titulo'] = 'Escritorio';
      $this->load->view('plantilla/header',$data);
      $this->load->view('plantilla/navbar');
-     
+      $this->load->view('escritorio');
      $this->load->view('plantilla/foother');
          
       	

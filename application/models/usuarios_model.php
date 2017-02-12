@@ -26,7 +26,61 @@ class Usuarios_model extends CI_Model {
     			return false;
     		}
     	}
-   	
 
+   	//la función de Select * en sql
+    public function selPerfil(){
+        $query = $this->db->query("Select * from perfil");
+        //retornamos todo los registros de la tabla perfil
+        return $query->result();
+    }
+
+
+    //funcion para listar usuarios
+    public function listUsuario(){
+       $query = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil=p.per_id");
+       return $query->result();
+    }
+
+ //funcion para insertar usuario
+    public function insertUsuario($idper, $nombre, $apellidos, $email, $dni){
+        
+        $arrayDatos = array(
+            'perfil' => $idper,
+            'nombre' => $nombre,
+            'apellidos' => $apellidos,
+            'email' => $email,
+            'dni' => $dni
+        );
+
+        $this->db->insert('usuarios', $arrayDatos);
+        
+    }
+
+     public function deleteUsuario($id){        
+        $this->db->where('usu_id', $id);
+        $this->db->delete('usuarios');
+    }
+
+
+    public function editUsuario($id){
+       $consulta = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil= p.per_id WHERE u.usu_id = $id");
+            return $consulta->result();
+    }
+
+
+    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtDNI){
+        $array = array(
+            'perfil' => $txtPerid,
+            'nombre' => $txtNombre,
+            'apellidos' => $txtApellidos,
+            'email' => $txtEmail,
+            'dni' => $txtDNI           
+        );
+        $this->db->where('usu_id', $txtUsuid);
+        $this->db->update('usuarios',$array);
+    }
+
+
+    
    
 }

@@ -5,19 +5,22 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent:: __construct();
+    $this->load->model('usuarios_model');
 	}
 
 
     public function index() {
-       $data= "";
+       $data= array();
+       
        if(isset($_POST['password'])){
 
-       $this->load->model('usuarios_model');
-
           if($this->usuarios_model->login($_POST['email'], $_POST['password'])){
+
               $data = array(
               'email' => $this->input->post('email')
+              
                );
+
           $this->session->set_userdata($data);
             	redirect('welcome');
 		        }
@@ -30,6 +33,7 @@ class Login extends CI_Controller {
         
          $this->load->view('login',$data);
      }
+
  function logout() {
     $this->session->sess_destroy();
     header('Location:' . base_url());
