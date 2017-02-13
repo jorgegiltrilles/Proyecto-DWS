@@ -15,7 +15,7 @@ class Usuarios_model extends CI_Model {
     		/*nos devuelve una fila si existe*/
     		$this->db-> where('email',$email);
     		$this->db-> where('password',$password);
-    		$q = $this->db-> get('usuarios');
+    		$q = $this->db->get('usuarios');
 
     		if ($q->num_rows()>0)
     		{
@@ -62,6 +62,14 @@ class Usuarios_model extends CI_Model {
         $this->db->delete('usuarios');
     }
 
+         
+      public function datos_sesion($email)
+            {
+        $this->db->where('email',$email);
+         $query = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil=p.per_id");
+           return $query->row();
+       
+    }
 
     public function editUsuario($id){
        $consulta = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil= p.per_id WHERE u.usu_id = $id");

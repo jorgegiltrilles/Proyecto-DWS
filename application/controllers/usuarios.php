@@ -11,10 +11,14 @@ class Usuarios extends CI_Controller {
 
 
     public function index() {
+
       $data['email'] =$this->session->userdata('email');
       $data['titulo'] = 'Usuarios';
+      $data['nombre'] =$this->session->userdata('nombre');
+      $data['apellidos'] =$this->session->userdata('apellidos');
       $data['selPerfil'] = $this->usuarios_model->selPerfil();
       $data['listaUsuario'] = $this->usuarios_model->listUsuario();
+      
       $this->load->view('plantilla/header',$data);
       $this->load->view('plantilla/navbar');
       $this->load->view('usuarios/usuarios');
@@ -35,11 +39,14 @@ class Usuarios extends CI_Controller {
         }        
     }    
     public function delete($id){
-        if($id != NULL && $id !=1){
+
+       if($id != NULL && $id !=1){
             $this->usuarios_model->deleteUsuario($id);
             redirect('usuarios');
         }
-         redirect('usuarios');
+                 
+           redirect('errordelete');
+        
     }
     public function edit($id){
         if($id != NULL){
@@ -47,6 +54,8 @@ class Usuarios extends CI_Controller {
             $data['datosUsuario'] = $this->usuarios_model->editUsuario($id);
             $data['selPerfil'] = $this->usuarios_model->selPerfil();
             $data['email'] =$this->session->userdata('email');
+            $data['nombre'] =$this->session->userdata('nombre');
+            $data['apellidos'] =$this->session->userdata('apellidos');
 
             $this->load->view('plantilla/header',$data);
             $this->load->view('plantilla/navbar');

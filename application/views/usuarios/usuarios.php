@@ -10,6 +10,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Usuarios
+                          
                         </h1>
                         <ol class="breadcrumb">
                             <li>
@@ -17,7 +18,7 @@
                             </li>
 
                             <li class="active">
-                                <i class="fa fa-bar-chart-o"></i> Usuarios
+                                <i class="fa fa-bar fa-user"></i> Usuarios
                             </li>
                         </ol>
                     </div>
@@ -64,9 +65,15 @@
                                 <a href="<?php echo base_url('usuarios/delete')."/".$value->usu_id; ?>" title="Eliminar"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 <a href="<?php echo base_url('usuarios/edit')."/".$value->usu_id; ?>" title="Editar"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                           </center>
+
                       </td>
                       
                   </tr>
+                   <!--mensaje error -->
+    
+        
+    
+
                   <?php } ?>
               </tbody>
           </table>

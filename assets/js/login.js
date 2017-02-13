@@ -1,4 +1,4 @@
-$(document).ready(ini);
+﻿$(document).ready(ini);
 
 function ini(){
     $("#btnregistrar").click(enviarDatos);// formulario login validación
@@ -20,3 +20,22 @@ function ini(){
                 }
 
            },
+
+$(document).ready(function() {
+  $('.ficha').on('click',
+      function(e) {
+      	alert('Aqui');
+        $('#ajaxModal').remove();
+        e.preventDefault();
+        var $this = $(this),
+          $remote = $this.attr('href'),
+          $modal = $('<div class="modal" id="ajaxModal"><div class="modal-body"></div></div>');
+        $('body').append($modal);
+        $modal.modal({
+          backdrop: 'static',
+          keyboard: false
+        });
+        $modal.load($remote);
+      }
+    );
+});

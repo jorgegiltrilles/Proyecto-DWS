@@ -9,14 +9,14 @@
         <link rel="icon" href="<?=base_url()?>assets/img/favicon.png" type="image/gif">
         <script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 
-    </head>
+</head>
 
 <body>
        <div class="container">
         <div class="card card-container">
            
             <img id="profile-img" class="profile-img-card" src= "<?php echo base_url()?>assets/img/avatar1.png" />
-            <form class="form-signin" method="post">
+            <form action= "<?=base_url()?>login" class="form-signin" method="post">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required autofocus>
                 <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
@@ -35,10 +35,11 @@
 
            
         </div><!-- /card-container -->
+          
     </div><!-- /container -->
-          <div class="container" id="resultado">
-          </div>
 
-        </body>
+          
+
+  </body>
 
 </html>

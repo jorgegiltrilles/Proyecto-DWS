@@ -13,6 +13,8 @@ class Clientes extends CI_Controller {
     public function index() {
     	
      $data['email'] =$this->session->userdata('email');
+     $data['nombre'] =$this->session->userdata('nombre');
+     $data['apellidos'] =$this->session->userdata('apellidos');
      $data['titulo'] = 'Clientes';
      $data['listaClientes'] = $this->clientes_model->listClientes();
      $this->load->view('plantilla/header',$data);
