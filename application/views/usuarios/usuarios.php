@@ -43,7 +43,8 @@
               <th>Apellidos</th>
               <th>DNI</th>
               <th>Perfil</th>
-              <th>Correo</th>
+              <th>Email</th>
+              <th>Password</th>
               <th><center>Acciones</center></th>
               
               </thead>
@@ -57,6 +58,7 @@
                       <td><?php echo $value->dni; ?></td>
                       <td><?php echo $value->per_nombre; ?></td>
                       <td><?php echo $value->email; ?></td>
+                      <td><?php echo $value->password; ?></td>
                       <td> 
                             <center>
                                 <a href="<?php echo base_url('usuarios/delete')."/".$value->usu_id; ?>" title="Eliminar"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
@@ -85,15 +87,20 @@
             </div>
               <div class="form-group">
               <label for="exampleInputEmail1">Nombre</label>
-              <input type="text" name="txtNombre" class="form-control" id="exampleInputEmail1" placeholder="nombre">
+              <input type="text" name="txtNombre" class="form-control" id="exampleInputEmail1" placeholder="nombre" required>
             </div>
               <div class="form-group">
               <label for="exampleInputEmail1">Apellidos</label>
-              <input type="text" name="txtApellidos" class="form-control" id="exampleInputEmail1" placeholder="apellidos">
+              <input type="text" name="txtApellidos" class="form-control" id="exampleInputEmail1" placeholder="apellidos" required>
             </div>
               <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input type="text" name="txtEmail" class="form-control" id="exampleInputEmail1" placeholder="email">
+              <input type="email" name="txtEmail" class="form-control" id="inputEmail" placeholder="email" required>
+            </div>
+           
+              <div class="form-group">
+              <label for="exampleInputEmail1">Password</label>
+              <input type="password" name="txtPassword" class="form-control" id="inputPassword" placeholder="password" required>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">DNI</label>

@@ -27,19 +27,21 @@ class Usuarios extends CI_Controller {
             $txtNombre = $datos['txtNombre'];
             $txtApellidos = $datos['txtApellidos'];
             $txtCorreo = $datos['txtEmail'];
+            $txtPassword = $datos['txtPassword'];
             $txtDNI = $datos['txtDNI'];
-            $this->usuarios_model->insertUsuario($txtId, $txtNombre, $txtApellidos, $txtCorreo, $txtDNI);
+            $this->usuarios_model->insertUsuario($txtId, $txtNombre, $txtApellidos, $txtCorreo, $txtPassword,$txtDNI);
 
             redirect('usuarios');
         }        
     }    
-    public function delete($id = NULL){
-        if($id != NULL){
+    public function delete($id){
+        if($id != NULL && $id !=1){
             $this->usuarios_model->deleteUsuario($id);
             redirect('usuarios');
         }
+         redirect('usuarios');
     }
-    public function edit($id = NULL){
+    public function edit($id){
         if($id != NULL){
             //mostrar datos
             $data['datosUsuario'] = $this->usuarios_model->editUsuario($id);
@@ -58,12 +60,13 @@ class Usuarios extends CI_Controller {
         
     }
 
-    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtDNI){
+    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail,$txtPassword ,$txtDNI){
         $array = array(
             'per_id' => $txtPerid,
             'nombre' => $txtNombre,
             'apellidos' => $txtApellidos,
             'email' => $txtEmail,
+            'password' => $txtPassword,
             'dni' => $txtDNI           
         );
         $this->db->where('usu_id', $txtUsuid);
@@ -78,8 +81,9 @@ class Usuarios extends CI_Controller {
             $txtNombre = $datos['txtNombre'];
             $txtApellidos = $datos['txtApellidos'];
             $txtEmail = $datos['txtEmail'];
+            $txtPassword = $datos['txtPassword'];
             $txtDNI= $datos['txtDNI'];
-            $this->usuarios_model->updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtDNI);
+            $this->usuarios_model->updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtPassword,$txtDNI);
             redirect('usuarios');
         }
 

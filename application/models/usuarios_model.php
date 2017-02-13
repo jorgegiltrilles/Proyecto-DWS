@@ -42,13 +42,14 @@ class Usuarios_model extends CI_Model {
     }
 
  //funcion para insertar usuario
-    public function insertUsuario($idper, $nombre, $apellidos, $email, $dni){
+    public function insertUsuario($idper, $nombre, $apellidos, $email, $password, $dni){
         
         $arrayDatos = array(
             'perfil' => $idper,
             'nombre' => $nombre,
             'apellidos' => $apellidos,
             'email' => $email,
+            'password' => $password,
             'dni' => $dni
         );
 
@@ -68,12 +69,13 @@ class Usuarios_model extends CI_Model {
     }
 
 
-    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtDNI){
+    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtPassword,$txtDNI){
         $array = array(
             'perfil' => $txtPerid,
             'nombre' => $txtNombre,
             'apellidos' => $txtApellidos,
             'email' => $txtEmail,
+            'password' => $txtPassword,
             'dni' => $txtDNI           
         );
         $this->db->where('usu_id', $txtUsuid);

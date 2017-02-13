@@ -53,7 +53,11 @@
             </div>
               <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input type="text" name="txtEmail" class="form-control" id="exampleInputEmail1" value="<?php echo $value->email;?>">
+              <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" value="<?php echo $value->email;?>">
+            </div>
+              <div class="form-group">
+              <label for="exampleInputEmail1">Password</label>
+              <input type="password" name="txtPassword" class="form-control" id="exampleInputEmail1" value="<?php echo $value->password;?>">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">DNI</label>
