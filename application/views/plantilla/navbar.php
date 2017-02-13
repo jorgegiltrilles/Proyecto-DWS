@@ -16,7 +16,7 @@
                    
                 
                     <li>
-                        <a href="<?=base_url()?>pdf/prueba.pdf"><i class="fa fa-fw fa-file"></i> Manual de usuario</a>
+                        <a href="<?=base_url()?>pdf/manual.pdf"><i class="fa fa-fw fa-file"></i> Manual de usuario</a>
                     </li>
                     <li>
                         <a href="<?=base_url()?>acercade"><i class="fa fa-fw fa-dashboard"></i> Acerca de</a>
