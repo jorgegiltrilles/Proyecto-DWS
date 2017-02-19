@@ -42,7 +42,8 @@
               <th>Población</th>
               <th>Provincia</th>
               <th>Código Postal</th>
-             
+              <th>Acciones</th>
+                         
               
               </thead>
               
@@ -56,6 +57,15 @@
                       <td><?php echo $value->poblacion; ?></td>
                       <td><?php echo $value->provincia; ?></td>
                      <td><?php echo $value->codigopostal; ?></td>
+
+
+                     <td> 
+                            <center>
+                                
+                                <a href="<?php echo base_url('clientes/tarifas')."/".$value->codigo_cliente; ?>" title="Mostrar Tarifa">ver tarifa<span class="glyphicon glyphicon-euro" aria-hidden="true"></span></a>
+                          </center>
+
+                      </td>
                       
                   </tr>
                   <?php } ?>

@@ -29,7 +29,7 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" href="<?=base_url()?>assets/img/favicon.png" type="image/png">
+    <link rel="shortcut icon"  href="<?=base_url()?>assets/img/favicon.png" type="image/png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,7 +64,8 @@
                  
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  
-                    <?= $nombre?> <?= $apellidos?><b class="caret"></b></a>
+                 
+                  <?= $nombre?> <?= $apellidos?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                          <li>
                             <a href="<?= site_url()?>perfil"><i class="fa fa-fw fa-user"></i> Perfil</a>
