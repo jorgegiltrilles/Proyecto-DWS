@@ -21,7 +21,7 @@ class Login extends CI_Controller {
           if($usuario){
               $data = array(
                    'email'    =>    $usuario->email,
-                   'logeado' => true,
+                   'login' => true,
                    'id_usuario'  =>    $usuario->usu_id,
                    'apellidos'    =>    $usuario->apellidos,
                    'fecha_alta'    =>    $usuario->fecha_alta,

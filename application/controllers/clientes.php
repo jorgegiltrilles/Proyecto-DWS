@@ -7,10 +7,16 @@ class Clientes extends CI_Controller {
   {
     parent:: __construct();
     $this->load->model('clientes_model');
-     $this->load->model('tarifas_model');
+    $this->load->model('tarifas_model');
+    $this->load->model('usuarios_model');
+        if (!$this->session->userdata("login")){
+             redirect(base_url());
+            }
   }
 	
 
+
+    
     public function index() {
     	
      $data['email'] =$this->session->userdata('email');

@@ -26,10 +26,10 @@
     <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
  
-
-
     <!-- Favicon -->
-    <link rel="shortcut icon"  href="<?=base_url()?>assets/img/favicon.png" type="image/png">
+    <link rel="icon" href="<?=base_url()?>assets/img/favicon.jpg" type="image/x-icon">
+    
+   
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

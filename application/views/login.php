@@ -6,9 +6,9 @@
         <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.css" />
         <link rel="stylesheet" href="<?php echo base_url()?>assets/css/login.css" />
         <!-- Favicon -->
-        <link rel="icon" href="<?=base_url()?>assets/img/favicon.png" type="image/gif">
-        <script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
+        <link rel="icon" href="<?=base_url()?>assets/img/favicon.jpg" type="image/jpg">
 
+       
 </head>
 
 <body>
