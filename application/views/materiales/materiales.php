@@ -40,7 +40,8 @@
               <th>Formato</th>
               <th>Serie</th>
               <th>Color</th>
-              <th>Precios</th>
+              <th>Precio</th>
+             <th>Cliente</th>
               
              
               
@@ -54,9 +55,18 @@
                       <td><?php echo $value->formato; ?></td>
                       <td><?php echo $value->serie; ?></td>
                       <td><?php echo $value->color; ?></td>
-                      <td><?php echo $value->patron_precios; ?></td>
+                      <td><?php echo $value->precio; echo " €" ?></td>
+                      <td><?php 
+
+                      if ($value->mat_cliente == 0 ){
+                        echo "Material Genérico";
+                      }
+
+                      else{
+                        echo $value->razonsocial; 
+                      }
                     
-                      
+                      ?></td>
                   </tr>
                   <?php } ?>
               </tbody>

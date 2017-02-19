@@ -34,11 +34,34 @@ class Usuarios_model extends CI_Model {
         return $query->result();
     }
 
+  public function selPerfilHeader($perfil){
+        $this->db->select('*');    
+        $this->db->from('perfil');
+        $this->db->where('per_id' , $perfil);
+       
+        $query = $this->db->get();
+        return $query->result();
+
+
+       
+    }
+
+   
+    
+
 
     //funcion para listar usuarios
     public function listUsuario(){
-       $query = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil=p.per_id");
-       return $query->result();
+        $this->db->select('*');    
+        $this->db->from('usuarios');
+        $this->db->join('perfil', 'usuarios.perfil = perfil.per_id');
+        $this->db->join('cliente', 'usuarios.cod_cliente = cliente.codigo_cliente');
+        
+        $query = $this->db->get();
+        return $query->result();
+
+
+       
     }
 
  //funcion para insertar usuario
@@ -63,13 +86,17 @@ class Usuarios_model extends CI_Model {
     }
 
          
-      public function datos_sesion($email)
-            {
-        $this->db->where('email',$email);
-         $query = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil=p.per_id");
-           return $query->row();
-       
-    }
+     
+    public function usuario_por_nombre_contrasena($email, $contrasena){
+          $this->db->select('*');
+          $this->db->from('usuarios');
+          $this->db->where('email', $email);
+          $this->db->where('password', $contrasena);
+          
+          $consulta = $this->db->get();
+          $resultado = $consulta->row();
+           return $resultado;
+   }
 
     public function editUsuario($id){
        $consulta = $this->db->query("SELECT * FROM usuarios u inner join perfil p on u.perfil= p.per_id WHERE u.usu_id = $id");

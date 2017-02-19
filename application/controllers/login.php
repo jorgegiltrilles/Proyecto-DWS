@@ -13,26 +13,37 @@ class Login extends CI_Controller {
     
       $data = array();
        
-       if(isset($_POST['password'])){
-
-          if($this->usuarios_model->login($_POST['email'], $_POST['password'])){
-               $email = $this->input->post('email');
-               $datos = $this->usuarios_model->datos_sesion($email);
-               $data = array(
-                   'email'    =>    $datos->email,
+      if($this->input->post()){
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $usuario = $this->usuarios_model->usuario_por_nombre_contrasena($email, $password);
+       
+          if($usuario){
+              $data = array(
+                   'email'    =>    $usuario->email,
                    'logeado' => true,
-                   'id_usuario'  =>    $datos->usu_id,
-                   'perfil'    =>    $datos->perfil,
-                   'apellidos'    =>    $datos->apellidos,
-                   'fecha_alta'    =>    $datos->fecha_alta,
-                    'dni'    =>    $datos->dni,
-                     'per_nombre'    =>    $datos->per_nombre,
-                   'nombre'    =>    $datos->nombre
+                   'id_usuario'  =>    $usuario->usu_id,
+                   'apellidos'    =>    $usuario->apellidos,
+                   'fecha_alta'    =>    $usuario->fecha_alta,
+                   'perfil'=> $usuario->perfil,
+                    'dni'    =>    $usuario->dni,
+                    'cod_cliente'    =>    $usuario->cod_cliente,
+                   'nombre'    =>    $usuario->nombre
+
                 );    
                
 
           $this->session->set_userdata($data);
-            	redirect('escritorio');
+             if ($this->session->userdata('perfil')=='1'){
+                 redirect('escritorio');
+
+
+           }else{
+              redirect('escritorio_cliente');
+
+           }
+
+            	
 		        }
                             
           else{   //   Si no logró validar
