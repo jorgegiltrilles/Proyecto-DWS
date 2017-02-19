@@ -13,9 +13,7 @@
                     <li>
                         <a href="<?=base_url()?>materiales"><i class="fa fa-fw fa-edit"></i> Materiales</a>
                     </li>
-                   <li>
-                        <a href="<?=base_url()?>tarifas"><i class="fa fa-fw fa-edit"></i> Tarifas</a>
-                    </li>
+                   
                 
                     <li>
                         <a href="<?=base_url()?>pdf/manual.pdf"><i class="fa fa-fw fa-file"></i> Manual de usuario</a>

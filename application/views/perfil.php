@@ -42,16 +42,11 @@
               <input type="email" name="txtEmail" class="form-control"  value="<?php echo $email?>">
             </div>
 
-             
-             <?php foreach ($selPerfilHeader as $value) { ?>
             <div class="form-group">
-              <label for="exampleInputPassword1">Perfil</label>
-              <input type="text" name="txtDNI" class="form-control" id="disabledTextInput"  value ="<?php echo $value->per_nombre; ?>">
-            </div>  
+              <label for="exampleInputEmail1">Perfil</label>
+              <input type="text" id="txtNombre" class="form-control"  value="<?php echo  $per_nombre?>">
+               </div>
 
-           <?php } ?>
-
-                       
               <div class="form-group">
               <label for="exampleInputEmail1">Felta Alta</label>
               <input type="date" name="txtFecha" class="form-control"  value="<?php echo $fecha_alta?>">
@@ -61,8 +56,6 @@
               <label for="exampleInputPassword1">DNI</label>
               <input type="text" name="txtDNI" class="form-control" id="disabledTextInput"  value="<?php echo $dni?>">
             </div>  
-
-
     
          
      </div>

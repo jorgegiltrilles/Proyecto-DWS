@@ -15,25 +15,13 @@ class Materiales extends CI_Controller {
      $data['email'] =$this->session->userdata('email');
      $data['nombre'] =$this->session->userdata('nombre');
      $data['apellidos'] =$this->session->userdata('apellidos');
-     $cliente =$this->session->userdata('cod_cliente');
+
      $data['titulo'] = 'Clientes';
-     $data['listaMateriales'] = $this->materiales_model->listMateriales($cliente);
-         if ($this->session->userdata('perfil')==1){
-              $this->load->view('plantilla/header',$data);
-              $this->load->view('plantilla/navbar');
-              $this->load->view('materiales/materiales',$data);
-              $this->load->view('plantilla/foother');
-
-           }
-         else{
-              $this->load->view('plantilla/header',$data);
-              $this->load->view('plantilla/navbar_cliente');
-              $this->load->view('materiales/materiales',$data);
-              $this->load->view('plantilla/foother');
-
-
-           }
-     
+     $data['listaMateriales'] = $this->materiales_model->listMateriales();
+     $this->load->view('plantilla/header',$data);
+     $this->load->view('plantilla/navbar');
+      $this->load->view('materiales',$data);
+     $this->load->view('plantilla/foother');
          
       	
 		}

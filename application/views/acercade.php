@@ -34,8 +34,7 @@
             <div class="col-xs-12 col-sm-6 ">
             <h1>Jorge Gil Trilles</h1>
                 <h2>Proyecto DWS</h2>
-                 <h3>Versión 1.2</h3>
-                 <h4>Febrero 2017</h4>
+                 <h3>Versión 1.0</h3>
             </div>
 </div>
 </div>

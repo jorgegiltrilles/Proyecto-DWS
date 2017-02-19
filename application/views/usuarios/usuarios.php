@@ -46,7 +46,6 @@
               <th>Perfil</th>
               <th>Email</th>
               <th>Password</th>
-              <th>Cliente</th>
               <th><center>Acciones</center></th>
               
               </thead>
@@ -61,7 +60,6 @@
                       <td><?php echo $value->per_nombre; ?></td>
                       <td><?php echo $value->email; ?></td>
                       <td><?php echo $value->password; ?></td>
-                       <td><?php echo $value->razonsocial; ?></td>
                       <td> 
                             <center>
                                 <a href="<?php echo base_url('usuarios/delete')."/".$value->usu_id; ?>" title="Eliminar"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>

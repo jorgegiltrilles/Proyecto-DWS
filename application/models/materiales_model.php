@@ -12,23 +12,8 @@ class Materiales_model extends CI_Model {
 
 
 //funcion para listar usuarios
-    public function listMateriales($cliente){
-    	 if ($this->session->userdata('perfil')==1){
-
-        $this->db->select('*');    
-        $this->db->from('materiales');
-        $this->db->join('cliente', 'materiales.mat_cliente = cliente.codigo_cliente' , 'LEFT');
-        $query = $this->db->get();
-        return $query->result();
-
-
-     		
-     		  
- 		  }
- 		  else{
- 			
- 		  	$query = $this->db->query("SELECT * FROM materiales,cliente where codigo_cliente = $cliente and (mat_cliente=$cliente or mat_cliente=0)");
-    		return $query->result();
- 		  }
+    public function listMateriales(){
+       $query = $this->db->query("SELECT * FROM materiales");
+       return $query->result();
     }
 }
