@@ -21,6 +21,7 @@ class Usuarios extends CI_Controller {
       $data['nombre'] =$this->session->userdata('nombre');
       $data['apellidos'] =$this->session->userdata('apellidos');
       $data['selPerfil'] = $this->usuarios_model->selPerfil();
+      $data['selCliente'] = $this->usuarios_model->selCliente();
       $data['listaUsuario'] = $this->usuarios_model->listUsuario();
       
       $this->load->view('plantilla/header',$data);
@@ -37,7 +38,8 @@ class Usuarios extends CI_Controller {
             $txtCorreo = $datos['txtEmail'];
             $txtPassword = $datos['txtPassword'];
             $txtDNI = $datos['txtDNI'];
-            $this->usuarios_model->insertUsuario($txtId, $txtNombre, $txtApellidos, $txtCorreo, $txtPassword,$txtDNI);
+            $txtCliente = $datos['txtCliente'];
+            $this->usuarios_model->insertUsuario($txtId, $txtNombre, $txtApellidos, $txtCorreo, $txtPassword,$txtDNI,$txtCliente);
 
             redirect('usuarios');
         }        
@@ -57,6 +59,7 @@ class Usuarios extends CI_Controller {
             //mostrar datos
             $data['datosUsuario'] = $this->usuarios_model->editUsuario($id);
             $data['selPerfil'] = $this->usuarios_model->selPerfil();
+            $data['selCliente'] = $this->usuarios_model->selCliente();
             $data['email'] =$this->session->userdata('email');
             $data['nombre'] =$this->session->userdata('nombre');
             $data['apellidos'] =$this->session->userdata('apellidos');
@@ -73,13 +76,14 @@ class Usuarios extends CI_Controller {
         
     }
 
-    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail,$txtPassword ,$txtDNI){
+    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail,$txtPassword ,$txtDNI,$txtCliente){
         $array = array(
             'per_id' => $txtPerid,
             'nombre' => $txtNombre,
             'apellidos' => $txtApellidos,
             'email' => $txtEmail,
             'password' => $txtPassword,
+            'codigo_cliente' => $txtCliente,
             'dni' => $txtDNI           
         );
         $this->db->where('usu_id', $txtUsuid);
@@ -94,9 +98,10 @@ class Usuarios extends CI_Controller {
             $txtNombre = $datos['txtNombre'];
             $txtApellidos = $datos['txtApellidos'];
             $txtEmail = $datos['txtEmail'];
+            $txtCliente = $datos['txtCliente'];
             $txtPassword = $datos['txtPassword'];
             $txtDNI= $datos['txtDNI'];
-            $this->usuarios_model->updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtPassword,$txtDNI);
+            $this->usuarios_model->updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtPassword,$txtDNI,$txtCliente);
             redirect('usuarios');
         }
 

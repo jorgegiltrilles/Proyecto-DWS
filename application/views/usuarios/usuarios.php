@@ -85,6 +85,7 @@
           <div class="row">
               <div class="col-md-7 ">
                   <form method="POST" action="<?php echo base_url('usuarios/insert')?>">
+
             <div class="form-group">
               <label for="exampleInputEmail1">Perfil</label>
               <select name="txtIdper" class="form-control">
@@ -115,6 +116,17 @@
               <label for="exampleInputPassword1">DNI</label>
               <input type="text" name="txtDNI" class="form-control" id="exampleInputPassword1" placeholder="dni">
             </div>  
+
+            <div class="form-group">
+              <label for="exampleInputCliente">Cliente</label>
+              <select name="txtCliente" class="form-control">
+                  <?php foreach ($selCliente as $value) { ?>
+                      <option value="<?php echo $value->codigo_cliente?>"> <?php echo $value->razonsocial; ?> </option>    
+                  <?php } ?>
+
+              </select>
+            </div>
+           
 
             <button type="submit" class="btn btn-default">Registrar Usuario</button>
           </form>

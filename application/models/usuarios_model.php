@@ -34,6 +34,14 @@ class Usuarios_model extends CI_Model {
         return $query->result();
     }
 
+
+    //la función de Select * en sql
+    public function selCliente(){
+        $query = $this->db->query("Select * from cliente");
+        //retornamos todo los registros de la tabla perfil
+        return $query->result();
+    }
+
   public function selPerfilHeader($perfil){
         $this->db->select('*');    
         $this->db->from('perfil');
@@ -65,7 +73,7 @@ class Usuarios_model extends CI_Model {
     }
 
  //funcion para insertar usuario
-    public function insertUsuario($idper, $nombre, $apellidos, $email, $password, $dni){
+    public function insertUsuario($idper, $nombre, $apellidos, $email, $password, $dni,$cliente){
         
         $arrayDatos = array(
             'perfil' => $idper,
@@ -73,6 +81,7 @@ class Usuarios_model extends CI_Model {
             'apellidos' => $apellidos,
             'email' => $email,
             'password' => $password,
+            'cod_cliente' => $cliente,
             'dni' => $dni
         );
 
@@ -104,13 +113,14 @@ class Usuarios_model extends CI_Model {
     }
 
 
-    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtPassword,$txtDNI){
+    public function updateUsuario($txtUsuid,$txtPerid, $txtNombre, $txtApellidos, $txtEmail, $txtPassword,$txtDNI,$txtCliente){
         $array = array(
             'perfil' => $txtPerid,
             'nombre' => $txtNombre,
             'apellidos' => $txtApellidos,
             'email' => $txtEmail,
             'password' => $txtPassword,
+            'cod_cliente' => $txtCliente,
             'dni' => $txtDNI           
         );
         $this->db->where('usu_id', $txtUsuid);

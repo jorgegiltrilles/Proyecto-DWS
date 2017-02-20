@@ -13,11 +13,11 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="escritorio">Escritorio</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?=base_url()?>escritorio">Escritorio</a>
                             </li>
 
                             <li class="active">
-                                <i class="fa fa-bar-chart-o"></i> Tarifas
+                                <i class="fa fa-bar-chart-o"></i> Mantener Clientes
                             </li>
                         </ol>
                     </div>
@@ -59,16 +59,16 @@
                       <td><?php echo $value->provincia; ?></td>
                      <td><?php echo $value->codigopostal; ?></td>
                       <td><?php echo $value->patron; ?></td>
-
-
-                     <td> 
+                      <td> 
                             <center>
-                                
-                                <a href="<?php echo base_url('clientes/tarifas')."/".$value->codigo_cliente; ?>" title="Mostrar Tarifa">ver tarifa<span class="glyphicon glyphicon-euro" aria-hidden="true"></span></a>
+                                <a href="<?php echo base_url('clientes/delete')."/".$value->codigo_cliente; ?>" title="Eliminar"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                <a href="<?php echo base_url('clientes/edit')."/".$value->codigo_cliente; ?>" title="Editar"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                           </center>
 
                       </td>
-                      
+
+
+                                     
                   </tr>
                   <?php } ?>
               </tbody>

@@ -7,8 +7,21 @@
                     <li>
                         <a href="<?=base_url()?>usuarios"><i class="fa fa-fw fa-user"></i> Usuarios</a>
                     </li>
+                    
+
                     <li>
-                        <a href="<?=base_url()?>clientes"><i class="fa fa-fw fa-table"></i> Clientes</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Clientes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="<?=base_url()?>clientes/insertarCliente">Añadir Clientes</a>
+                            </li>
+                            <li>
+                                <a href="<?=base_url()?>clientes/mantenerClientes">Consulta/Edita Clientes</a>
+                            </li>
+                            <li>
+                                <a href="<?=base_url()?>clientes">Listar Tarifa</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="<?=base_url()?>materiales"><i class="fa fa-fw fa-edit"></i> Materiales</a>

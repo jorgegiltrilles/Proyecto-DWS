@@ -63,7 +63,22 @@
               <label for="exampleInputPassword1">DNI</label>
               <input type="text" name="txtDNI" class="form-control" id="exampleInputEmail1" value="<?php echo $value->dni;?>">
             </div>  
-    <?php } ?>
+
+          <div class="form-group">
+              <label for="exampleInputEmail1">Perfil</label>              
+              
+                  <?php 
+                  $lista = array();
+                  foreach ($selCliente as $registro) { 
+                      $lista[$registro->codigo_cliente] = $registro->razonsocial;
+                  } 
+                  echo form_dropdown('txtCliente',$lista,$value->cod_cliente, 'class="form-control"');
+                  ?>
+              
+            </div>
+
+
+       <?php } ?>
             <button type="submit" class="btn btn-default">Actualizar Usuario</button>
           </form>
     </div>
