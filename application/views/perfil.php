@@ -47,7 +47,8 @@
             <div class="form-group">
               <label for="exampleInputPassword1">Perfil</label>
               <input type="text" name="txtDNI" class="form-control" id="disabledTextInput"  value ="<?php echo $value->per_nombre; ?>">
-            </div>  
+            </div>
+              
 
            <?php } ?>
 
